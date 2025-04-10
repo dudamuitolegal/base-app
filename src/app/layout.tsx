@@ -4,7 +4,7 @@ import Footer from '@/app/components/Footer'
 import {siteConfig} from "@/utils/siteConfig";
 import "./globals.css";
 import {Poppins} from "next/font/google";
-
+import Script from "next/script";
 
 const poppins = Poppins({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -49,8 +49,25 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br">
+        <head>
+            <link rel="icon" href="/favicon.png" />
+            <Script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics}`}
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${siteConfig.analytics}');
+            `}
+            </Script>
+        </head>
         <body
-            className={`antialiased bg-[#103173] ${poppins.className}`}
+            className={`antialiased bg-[#214F3C] ${poppins.className}`}
+            style={{backgroundImage: `url(bg-pattern.avif)`}}
         >
         <Header/>
         <main>

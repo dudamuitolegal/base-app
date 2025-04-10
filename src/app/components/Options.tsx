@@ -1,33 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import {DollarSign, Star, Spade} from "lucide-react"
+import {Star} from "lucide-react"
 import {siteConfig} from "@/utils/siteConfig";
 
 const options = [
-    {
-        id: 1,
-        title: "Cassino ao Vivo",
-        alt: "Crazy Time ao vivo - Roleta interativa com multiplicadores e bônus emocionantes",
-        image: "/home/category-images/casino-ao-vivo.webp"
-    },
-    {
-        id: 2,
-        title: "Crash Games",
-        alt: "Spaceman - Crash game de astronomia com multiplicadores explosivos",
-        image: "/home/category-images/crash-games.webp"
-    },
-    {
-        id: 3,
-        title: "Slots Games",
-        alt: "Slot Cocktail Nights - Caça-níqueis temático de drinks com jackpots progressivos",
-        image: "/home/category-images/slots.webp"
-    },
-    {
-        id: 4,
-        title: "Jogos do Mês",
-        alt: "Blackjack VIP - Cartas de ouros representando o jogo mais popular do mês",
-        image: "/home/category-images/jogos-do-mes.webp"
-    }
+    {id: 1, alt: "Tigre Sortudo", image: "/home/games-images/tigre-sortudo.webp", title: "Jogos do Mês"},
+    {id: 2, alt: "Wild West Duels", image: "/home/games-images/wild-west-duels.webp", title: "Slots Games"},
+    {id: 3, alt: "High Flyer", image: "/home/games-images/high-flyer.webp", title: "Crash Games"},
+    {id: 4, alt: "Baccarat Live", image: "/home/games-images/baccarat-live.webp", title: "Cassino ao Vivo"},
 ];
 
 
@@ -51,7 +31,7 @@ export default function Options() {
                                 <Image
                                     className={`w-full h-full object-fit`}
                                     src={option.image}
-                                    alt={option.title}
+                                    alt={option.alt}
                                     width={300}
                                     height={300}
                                 />

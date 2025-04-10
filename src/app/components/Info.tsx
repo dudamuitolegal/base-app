@@ -2,7 +2,6 @@
 import React from 'react'
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from 'swiper/modules';
-import "swiper/css";
 import Link from "next/link";
 import Image from 'next/image';
 import {User, Spade, Flame, Rocket} from 'lucide-react';
@@ -103,52 +102,55 @@ export default function Info() {
         {
             id: 2,
             alt: "",
-            image: "/home/category-images/cassino-ao-vivo-2.jpg",
+            image: "/home/category-images/pragmaticplay.webp",
             svg: PragmaticPlayIcon
         },
         {
             id: 3,
             alt: "",
-            image: "/home/category-images/black-jack-pays.jpg",
+            image: "/home/category-images/ezugi.webp",
             svg: EzugiIcon
         },
         {
             id: 4,
             alt: "",
-            image: "/home/category-images/roleta.jpg",
+            image: "/home/category-images/luckystreak.webp",
             svg: LuckyStreakIcon
         },
 
 
     ];
     const popularSlides = [
-        {id: 1, alt: "", image: "/home/games-images/aviator.webp"},
-        {id: 2, alt: "", image: "/home/games-images/fortune-dragon.webp"},
-        {id: 3, alt: "", image: "/home/games-images/fortune-ox.webp"},
-        {id: 4, alt: "", image: "/home/games-images/fortune-snake.webp"},
-        {id: 6, alt: "", image: "/home/games-images/fortune-tiger.webp"},
-        {id: 7, alt: "", image: "/home/games-images/zeus-vs-hades.webp"},
-        {id: 8, alt: "", image: "/home/games-images/rio-fantasia.webp"},
+        {id: 1, alt: "Might Of Freya", image: "/home/games-images/might-of-freya.webp"},
+        {id: 8, alt: "Oishi Delights", image: "/home/games-images/oishi-delights.webp"},
+        {id: 2, alt: "Angel Vs Sinner", image: "/home/games-images/angel-vs-sinner.webp"},
+        {id: 3, alt: "Circus Delight", image: "/home/games-images/circis-delight.webp"},
+        {id: 4, alt: "Cocktail Nights", image: "/home/games-images/cocktail-nights.webp"},
+        {id: 5, alt: "Eternal Empress Freeze Time", image: "/home/games-images/eternal-empress-freeze-time.webp"},
+        {id: 6, alt: "Geisha's Revenge", image: "/home/games-images/geisha's-revenge.webp"},
+        {id: 7, alt: "Hot Fiesta", image: "/home/games-images/hot-fiesta.webp"},
+        {id: 9, alt: "Rio Fantasia", image: "/home/games-images/rio-fantasia.webp"},
+        {id: 10, alt: "Starlight Princess", image: "/home/games-images/starlight-princess.webp"},
+        {id: 11, alt: "Super Cole Drive", image: "/home/games-images/super-cole-drive.webp"},
+
 
     ];
 
     const releaseSlides = [
-        {id: 1, alt: "", image: "/home/games-images/81-creepy-circus.jpg"},
-        {id: 2, alt: "", image: "/home/games-images/bounty-of-the-seas-hold-win.jpg"},
-        {id: 3, alt: "", image: "/home/games-images/burning-chilli.jpg"},
-        {id: 4, alt: "", image: "/home/games-images/cash-40.jpg"},
-        {id: 6, alt: "", image: "/home/games-images/coin-strike.jpg"},
-        {id: 7, alt: "", image: "/home/games-images/crazy-streamer.jpg"},
-        {id: 8, alt: "", image: "/home/games-images/dog-masons-mega-woof.jpg"},
-        {id: 9, alt: "", image: "/home/games-images/duel-at-down.jpg"},
-        {id: 10, alt: "", image: "/home/games-images/energy-joker.jpg"},
-        {id: 11, alt: "", image: "/home/games-images/lava-fruits.jpg"},
-        {id: 12, alt: "", image: "/home/games-images/majestic-white-leopard.jpg"},
-        {id: 13, alt: "", image: "/home/games-images/tree-of-light.jpg"},
-        {id: 14, alt: "", image: "/home/games-images/xmas-rooster.jpg"},
-
+        {id: 2, alt: "1001 Mystery Genie Fortunes", image: "/home/games-images/1001mysterygeniefortunes_icon.webp"},
+        {id: 3, alt: "Anubisii Double Max", image: "/home/games-images/anubisiidoublemax_icon.webp"},
+        {id: 4, alt: "Dragons Blessings Loot Link", image: "/home/games-images/dragonsblessingslootlink_icon.webp"},
+        {id: 5, alt: "Easter Classics", image: "/home/games-images/easterclassics_icon.webp"},
+        {id: 6, alt: "Fortune Crown", image: "/home/games-images/fortunecrown_icon.webp"},
+        {id: 7, alt: "King Of The Sky", image: "/home/games-images/kingofthesky_icon.webp"},
+        {id: 8, alt: "Lava Burst", image: "/home/games-images/lavaburst_icon.webp"},
+        {id: 9, alt: "Piggy Mania", image: "/home/games-images/piggymania_icon.webp"},
+        {id: 10, alt: "Ride The Lightning", image: "/home/games-images/ridethelightning_icon.webp"},
+        {id: 11, alt: "Rush Riches", image: "/home/games-images/rushriches_icon.webp"},
+        {id: 12, alt: "Trinity Pharaoh Link Running Wins", image: "/home/games-images/trinitypharaohlinkrunningwins_icon.webp"},
+        {id: 13, alt: "Vikings Go To Olympus Wild Fight", image: "/home/games-images/vikingsgotoolympuswildfight_icon.webp"},
+        {id: 14, alt: "Wild Calacas", image: "/home/games-images/wildcalacas_icon.webp"}
     ];
-
 
 
     return (
@@ -167,7 +169,7 @@ export default function Info() {
                     spaceBetween={10}
                     slidesPerView={2.5}
                     breakpoints={{
-                        640:{
+                        640: {
                             slidesPerView: 3.5
                         },
                         768: {
@@ -178,7 +180,9 @@ export default function Info() {
                     }}
                 >
                     {slides.map((slide) => (
-                        <SwiperSlide  style={{transition: '0.3s'}} className={`transition-transform ease-in-out hover:-translate-y-0.5`}  key={slide.id}>
+                        <SwiperSlide style={{transition: '0.3s'}}
+                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
+                                     key={slide.id}>
                             <Link className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
@@ -219,7 +223,7 @@ export default function Info() {
                     spaceBetween={10}
                     slidesPerView={2.5}
                     breakpoints={{
-                        640:{
+                        640: {
                             slidesPerView: 3.5
                         },
                         768: {
@@ -231,7 +235,9 @@ export default function Info() {
                     }}
                 >
                     {popularSlides.map((slide) => (
-                        <SwiperSlide  style={{transition: '0.3s'}} className={`transition-transform ease-in-out hover:-translate-y-0.5`} key={slide.id}>
+                        <SwiperSlide style={{transition: '0.3s'}}
+                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
+                                     key={slide.id}>
                             <Link className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
@@ -288,25 +294,25 @@ export default function Info() {
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link className={`px-6 py-4 flex items-center gap-3`} href={siteConfig.defaultLink}>
-                                <CircleFlag countryCode="br" className="w-6 h-6"/>
-                                Paulista
+                                    <CircleFlag countryCode="br" className="w-6 h-6"/>
+                                    Paulista
                                 </Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="south-america" className="w-6 h-6"/>
-                                Copa Libertadores
-                                    </Link>
+                                    <CircleFlag countryCode="south-america" className="w-6 h-6"/>
+                                    Copa Libertadores
+                                </Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="south-america" className="w-6 h-6"/>
-                                Copa Sul-Americana
-                                    </Link>
+                                    <CircleFlag countryCode="south-america" className="w-6 h-6"/>
+                                    Copa Sul-Americana
+                                </Link>
                             </td>
                         </tr>
 
@@ -314,41 +320,41 @@ export default function Info() {
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="es" className="w-6 h-6"/>
-                                LaLiga Espanha
-                                    </Link>
+                                    <CircleFlag countryCode="es" className="w-6 h-6"/>
+                                    LaLiga Espanha
+                                </Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="gb" className="w-6 h-6"/>
-                                Premier League Inglaterra
-                                    </Link>
+                                    <CircleFlag countryCode="gb" className="w-6 h-6"/>
+                                    Premier League Inglaterra
+                                </Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="de" className="w-6 h-6"/>
-                                Bundesliga Alemanha
-                                    </Link>
+                                    <CircleFlag countryCode="de" className="w-6 h-6"/>
+                                    Bundesliga Alemanha
+                                </Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="it" className="w-6 h-6"/>
-                                Serie A Itália
-                                    </Link>
+                                    <CircleFlag countryCode="it" className="w-6 h-6"/>
+                                    Serie A Itália
+                                </Link>
                             </td>
                         </tr>
                         <tr className="bg-white dark:bg-gray-800">
                             <td>
                                 <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
-                                <CircleFlag countryCode="fr" className="w-6 h-6"/>
-                                Liga 1 França
-                                    </Link>
+                                    <CircleFlag countryCode="fr" className="w-6 h-6"/>
+                                    Liga 1 França
+                                </Link>
                             </td>
                         </tr>
                         </tbody>
@@ -370,7 +376,7 @@ export default function Info() {
                     spaceBetween={10}
                     slidesPerView={2.5}
                     breakpoints={{
-                        640:{
+                        640: {
                             slidesPerView: 3.5
                         },
                         768: {
@@ -383,7 +389,9 @@ export default function Info() {
                     }}
                 >
                     {releaseSlides.map((slide) => (
-                        <SwiperSlide  style={{transition: '0.3s'}} className={`transition-transform ease-in-out hover:-translate-y-0.5`} key={slide.id}>
+                        <SwiperSlide style={{transition: '0.3s'}}
+                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
+                                     key={slide.id}>
                             <Link className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">

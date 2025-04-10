@@ -1,9 +1,9 @@
 export const siteConfig = {
-    name: "siteName",
-    url: "https://siteName.com.br",
+    name: "468bet9",
+    url: "https://369bet9.com.br",
     analytics: "analytics ID",
     defaultLink: "default-link",
-    logo: "/logo.webp",
-    logoWidth: 100,
-    logoHeight: 100,
+    logo: "/logo.avif",
+    logoWidth: 150,
+    logoHeight: 150,
 }
