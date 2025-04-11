@@ -183,7 +183,7 @@ export default function Info() {
                         <SwiperSlide style={{transition: '0.3s'}}
                                      className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
-                            <Link className="relative" href={siteConfig.defaultLink}>
+                            <Link  rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
                                     <User color="#3CD921" size={20}/>
@@ -238,7 +238,7 @@ export default function Info() {
                         <SwiperSlide style={{transition: '0.3s'}}
                                      className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
-                            <Link className="relative" href={siteConfig.defaultLink}>
+                            <Link  rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
                                     <User color="#3CD921" size={20}/>
@@ -275,7 +275,7 @@ export default function Info() {
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
 
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Brasileirão Série A
                                 </Link>
@@ -285,7 +285,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Copa do Brasil
                                 </Link>
@@ -293,7 +293,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link className={`px-6 py-4 flex items-center gap-3`} href={siteConfig.defaultLink}>
+                                <Link  rel="noopener noreferrer" className={`px-6 py-4 flex items-center gap-3`} href={siteConfig.defaultLink}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Paulista
                                 </Link>
@@ -301,7 +301,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="south-america" className="w-6 h-6"/>
                                     Copa Libertadores
                                 </Link>
@@ -309,7 +309,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="south-america" className="w-6 h-6"/>
                                     Copa Sul-Americana
                                 </Link>
@@ -319,7 +319,7 @@ export default function Info() {
                         {/* Ligas Europeias */}
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="es" className="w-6 h-6"/>
                                     LaLiga Espanha
                                 </Link>
@@ -327,7 +327,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="gb" className="w-6 h-6"/>
                                     Premier League Inglaterra
                                 </Link>
@@ -335,7 +335,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="de" className="w-6 h-6"/>
                                     Bundesliga Alemanha
                                 </Link>
@@ -343,7 +343,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="it" className="w-6 h-6"/>
                                     Serie A Itália
                                 </Link>
@@ -351,7 +351,7 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white dark:bg-gray-800">
                             <td>
-                                <Link href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="fr" className="w-6 h-6"/>
                                     Liga 1 França
                                 </Link>
@@ -392,7 +392,7 @@ export default function Info() {
                         <SwiperSlide style={{transition: '0.3s'}}
                                      className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
-                            <Link className="relative" href={siteConfig.defaultLink}>
+                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
                                     <User color="#3CD921" size={20}/>

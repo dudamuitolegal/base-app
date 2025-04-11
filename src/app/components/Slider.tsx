@@ -32,7 +32,8 @@ export default function Slider() {
             >
                 {banners.map((banner) => (
                     <SwiperSlide key={banner.id} className="rounded-lg px-2 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
-                        <Link href={siteConfig.defaultLink}>
+                        <Link target="_blank" rel="noopener noreferrer" href={siteConfig.defaultLink}>
+
                             <picture>
                                 <source media="(max-width: 1023px)" srcSet={banner.imageMobile}/>
                                 <source media="(min-width: 1024px)" srcSet={banner.imageDesktop}/>

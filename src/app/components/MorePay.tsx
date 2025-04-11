@@ -50,7 +50,7 @@ export default function MorePay(){
                 >
                     {slides.map((slide) => (
                         <SwiperSlide style={{transition: '0.3s'}} className={`transition-transform ease-in-out hover:-translate-y-0.5`} key={slide.id}>
-                            <Link className="relative" href={siteConfig.defaultLink}>
+                            <Link className="relative" href={siteConfig.defaultLink} target="_blank" rel="noopener noreferrer">
                                 <span
                                     className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
                                     <User color="#3CD921" size={20}/>

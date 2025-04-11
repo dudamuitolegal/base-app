@@ -28,7 +28,7 @@ export default function Header() {
             <nav className="flex flex-col gap-2 px-8 py-2 md:px-12 container mx-auto xl:px-20 2xl:px-28 xl:py-6">
                 <div className="flex justify-between items-center">
 
-                    <Link href={siteConfig.defaultLink} className="flex items-center flex-col">
+                    <Link href={siteConfig.defaultLink} target="_blank" rel="noopener noreferrer" className="flex items-center flex-col">
                         <Image
                             src={siteConfig.logo}
                             alt="Logo"
@@ -38,38 +38,46 @@ export default function Header() {
                     </Link>
                     <div className={`hidden xl:flex gap-4`}>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Receipt size={22}/> <span
                             className={`text-xs 2xl:text-base`}>Slots</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Dices size={22}/> <span
                             className={`text-xs 2xl:text-base`}>Cassino</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Volleyball size={22}/> <span
                             className={`text-xs 2xl:text-base`}>Esportes</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Gamepad2 size={22}/> <span
                             className={`text-xs 2xl:text-base`}>E-sports</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Trophy size={22}/> <span
                             className={`text-xs 2xl:text-base`}>Torneios</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 text-white lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Tag size={22}/> <span
                             className={`text-xs 2xl:text-base`}>Promoções</span></Link>
                     </div>
                     <div className={`flex justify-center gap-1.5 w-full max-w-58`}>
                         <Link href={siteConfig.defaultLink}
+                              target="_blank" rel="noopener noreferrer"
                               className="flex justify-center flex-1 hover:bg-transparent text-[#22674B] hover:text-white duration-300 transition-colors text-sm border border-[#F9FD4E] rounded-md p-2 bg-[#F9FD4E]">
                         <span className={`flex items-center gap-2`}>
                             <User/> Entrar
                         </span>
                         </Link>
                         <Link href={siteConfig.defaultLink}
+                              target="_blank" rel="noopener noreferrer"
                               className="flex justify-center flex-1 text-[#F9FD4E] hover:text-white duration-300 transition-colors text-sm border border-[#F9FD4E] rounded-md p-2">
                         <span className={`flex items-center gap-2`}>
                             <NotebookPen/> Cadastrar
@@ -84,24 +92,30 @@ export default function Header() {
                     <div
                         className="flex gap-10 text-[#70A291] font-light min-w-max py-2 lg:justify-between lg:w-full lg:gap-4">
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Receipt size={24}/> <span className={`text-xs`}>Slots</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Dices size={24}/> <span className={`text-xs`}>Cassino</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Volleyball size={24}/> <span
                             className={`text-xs`}>Esportes</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Gamepad2 size={24}/> <span
                             className={`text-xs`}>E-sports</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Trophy size={24}/> <span
                             className={`text-xs`}>Torneios</span></Link>
                         <Link
+                            target="_blank" rel="noopener noreferrer"
                             className={`hover:text-[#F9FD4E] duration-300 transition-colors flex flex-col items-center gap-2 lg:flex-row lg:p-2 lg:border-[0.5px] border-[#f6f3f436] rounded-lg`}
                             href={siteConfig.defaultLink}><Tag size={24}/> <span className={`text-xs`}>Promoções</span></Link>
                     </div>
