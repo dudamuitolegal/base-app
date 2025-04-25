@@ -50,7 +50,7 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
         <head>
-            <link rel="icon" href="/favicon.png" />
+            <link rel="icon" href={siteConfig.logo} />
             <Script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics}`}

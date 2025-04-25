@@ -4,6 +4,6 @@ export const siteConfig = {
     analytics: "",
     defaultLink: "",
     logo: "/favicon.png",
-    logoWidth: 75,
-    logoHeight: 75,
+    logoWidth: 100,
+    logoHeight: 100,
 }
