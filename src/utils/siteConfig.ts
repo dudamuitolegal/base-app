@@ -3,7 +3,7 @@ export const siteConfig = {
     url: "https://468bet9.com.br",
     analytics: "",
     defaultLink: "",
-    logo: "/logo.avif",
-    logoWidth: 150,
-    logoHeight: 150,
+    logo: "/favicon.png",
+    logoWidth: 75,
+    logoHeight: 75,
 }

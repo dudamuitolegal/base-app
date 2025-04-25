@@ -13,8 +13,8 @@ const poppins = Poppins({
 
 // meta tags gerais, para criar novas leia a documentação: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 export const metadata: Metadata = {
-    title: `${siteConfig.name} | Apostas Esportivas Online & Cassino - Jogue com Segurança`, // title padrão caso a página não tenha
-    description: `${siteConfig.name} é a sua plataforma completa de apostas esportivas e jogos de cassino online. Odas competitivas, promoções exclusivas e ambiente 100% seguro. Cadastre-se agora!`, // descrição padrão caso a página não tenha
+    title: `${siteConfig.name} | Apostas Online & Cassino - Jogue Seguro`, // title padrão caso a página não tenha
+    description: `${siteConfig.name} Sua plataforma completa de apostas esportivas e cassino online. Odds competitivas, promoções exclusivas e 100% seguro. Cadastre-se!`, // descrição padrão caso a página não tenha
     robots: 'index, follow',
     alternates: {
         canonical: siteConfig.url // canonical padrão caso a página não tenha

@@ -50,7 +50,11 @@ export default function Slider() {
                 ))}
 
             </Swiper>
-
+            <div className={`px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28`}>
+                <h1 className={`uppercase text-white flex items-center justify-center gap-1 font-bold text-2xl xl:text-3xl`}>
+                    {siteConfig.name}
+                </h1>
+            </div>
             <MorePay></MorePay>
 
 
