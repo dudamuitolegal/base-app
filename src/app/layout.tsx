@@ -50,7 +50,7 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
         <head>
-            <link rel="icon" href={siteConfig.logo} />
+            <link rel="icon" href={siteConfig.ico} />
             <Script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics}`}
@@ -66,7 +66,7 @@ export default function RootLayout({
             </Script>
         </head>
         <body
-            className={`antialiased bg-[#214F3C] ${poppins.className}`}
+            className={`antialiased bg-[#154633] ${poppins.className}`}
             style={{backgroundImage: `url(bg-pattern.avif)`}}
         >
         <Header/>

@@ -4,6 +4,8 @@ export const siteConfig = {
     analytics: "",
     defaultLink: "",
     logo: "/favicon.png",
-    logoWidth: 100,
-    logoHeight: 100,
+    ico: "/favicon.png",
+    logoWidth: 70,
+    logoHeight: 70,
+    bannersId: [1,2]
 }

@@ -147,8 +147,16 @@ export default function Info() {
         {id: 9, alt: "Piggy Mania", image: "/home/games-images/piggymania_icon.webp"},
         {id: 10, alt: "Ride The Lightning", image: "/home/games-images/ridethelightning_icon.webp"},
         {id: 11, alt: "Rush Riches", image: "/home/games-images/rushriches_icon.webp"},
-        {id: 12, alt: "Trinity Pharaoh Link Running Wins", image: "/home/games-images/trinitypharaohlinkrunningwins_icon.webp"},
-        {id: 13, alt: "Vikings Go To Olympus Wild Fight", image: "/home/games-images/vikingsgotoolympuswildfight_icon.webp"},
+        {
+            id: 12,
+            alt: "Trinity Pharaoh Link Running Wins",
+            image: "/home/games-images/trinitypharaohlinkrunningwins_icon.webp"
+        },
+        {
+            id: 13,
+            alt: "Vikings Go To Olympus Wild Fight",
+            image: "/home/games-images/vikingsgotoolympuswildfight_icon.webp"
+        },
         {id: 14, alt: "Wild Calacas", image: "/home/games-images/wildcalacas_icon.webp"}
     ];
 
@@ -181,21 +189,22 @@ export default function Info() {
                 >
                     {slides.map((slide) => (
                         <SwiperSlide style={{transition: '0.3s'}}
-                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
-                            <Link  rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
+                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
+                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
                                     <User color="#3CD921" size={20}/>
                                     {priceUtils.generateRandomThreeDigits()}
                                 </span>
-                                <Image
-                                    className="rounded-lg border-2 border-[#f6f3f436]"
-                                    src={slide.image}
-                                    width={500}
-                                    height={500}
-                                    alt={slide.alt}
-                                />
+                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+                                    <Image
+                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
+                                        src={slide.image}
+                                        width={500}
+                                        height={500}
+                                        alt={slide.alt}
+                                    />
+                                </div>
                                 <div style={{
                                     background: 'linear-gradient(357.83deg, #121611 30.86%, rgba(11, 8, 15, 0) 99.85%)'
                                 }}
@@ -236,22 +245,22 @@ export default function Info() {
                 >
                     {popularSlides.map((slide) => (
                         <SwiperSlide style={{transition: '0.3s'}}
-                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
-                            <Link  rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
+                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
+                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
                                     <User color="#3CD921" size={20}/>
                                     {priceUtils.generateRandomThreeDigits()}
                                 </span>
-                                <Image
-                                    className="rounded-lg border-2 border-[#f6f3f436]"
-                                    src={slide.image}
-                                    width={300}
-                                    height={300}
-                                    alt={slide.alt}
-                                />
-
+                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+                                    <Image
+                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
+                                        src={slide.image}
+                                        width={300}
+                                        height={300}
+                                        alt={slide.alt}
+                                    />
+                                </div>
                             </Link>
                         </SwiperSlide>
                     ))}
@@ -275,7 +284,8 @@ export default function Info() {
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
 
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Brasileirão Série A
                                 </Link>
@@ -285,7 +295,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Copa do Brasil
                                 </Link>
@@ -293,7 +304,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" className={`px-6 py-4 flex items-center gap-3`} href={siteConfig.defaultLink}>
+                                <Link rel="noopener noreferrer" className={`px-6 py-4 flex items-center gap-3`}
+                                      href={siteConfig.defaultLink}>
                                     <CircleFlag countryCode="br" className="w-6 h-6"/>
                                     Paulista
                                 </Link>
@@ -301,7 +313,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="south-america" className="w-6 h-6"/>
                                     Copa Libertadores
                                 </Link>
@@ -309,7 +322,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="south-america" className="w-6 h-6"/>
                                     Copa Sul-Americana
                                 </Link>
@@ -319,7 +333,8 @@ export default function Info() {
                         {/* Ligas Europeias */}
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="es" className="w-6 h-6"/>
                                     LaLiga Espanha
                                 </Link>
@@ -327,7 +342,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="gb" className="w-6 h-6"/>
                                     Premier League Inglaterra
                                 </Link>
@@ -335,7 +351,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="de" className="w-6 h-6"/>
                                     Bundesliga Alemanha
                                 </Link>
@@ -343,7 +360,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td>
-                                <Link  rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="it" className="w-6 h-6"/>
                                     Serie A Itália
                                 </Link>
@@ -351,7 +369,8 @@ export default function Info() {
                         </tr>
                         <tr className="bg-white dark:bg-gray-800">
                             <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink} className={`px-6 py-4 flex items-center gap-3`}>
+                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
+                                      className={`px-6 py-4 flex items-center gap-3`}>
                                     <CircleFlag countryCode="fr" className="w-6 h-6"/>
                                     Liga 1 França
                                 </Link>
@@ -390,22 +409,22 @@ export default function Info() {
                 >
                     {releaseSlides.map((slide) => (
                         <SwiperSlide style={{transition: '0.3s'}}
-                                     className={`transition-transform ease-in-out hover:-translate-y-0.5`}
                                      key={slide.id}>
                             <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                 <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1">
+                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
                                     <User color="#3CD921" size={20}/>
                                     {priceUtils.generateRandomThreeDigits()}
                                 </span>
-                                <Image
-                                    className="rounded-lg border-2 border-[#f6f3f436]"
-                                    src={slide.image}
-                                    width={300}
-                                    height={300}
-                                    alt={slide.alt}
-                                />
-
+                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+                                    <Image
+                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
+                                        src={slide.image}
+                                        width={300}
+                                        height={300}
+                                        alt={slide.alt}
+                                    />
+                                </div>
                             </Link>
                         </SwiperSlide>
                     ))}

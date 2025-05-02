@@ -23,18 +23,21 @@ export default function Options() {
                 </h2>
                 <div className={`grid grid-cols-2 gap-2.5 sm:grid-cols-4`}>
                     {options.map((option) => (
-                        <Link style={{transition: '0.3s'}} key={option.id} className={`relative col-span-1 overflow-hidden rounded-lg border-2 border-[#f6f3f436] transition-transform ease-in-out hover:-translate-y-1`}
+                        <Link style={{transition: '0.3s'}} key={option.id}
+                              className={`relative col-span-1 overflow-hidden rounded-lg border-2 border-[#f6f3f436]`}
                               href={siteConfig.defaultLink}>
                             <div className={`relative`}>
                             <span
-                                className={`absolute left-1 top-1 flex gap-1 bg-[#000000a8] text-white font-bold text-xs items-center rounded-lg p-2`}>{option.title}</span>
-                                <Image
-                                    className={`w-full h-full object-fit`}
-                                    src={option.image}
-                                    alt={option.alt}
-                                    width={300}
-                                    height={300}
-                                />
+                                className={`absolute left-1 top-1 flex gap-1 bg-[#000000a8] text-white font-bold text-xs items-center rounded-lg p-2 z-10`}>{option.title}</span>
+                                <div className={`block overflow-hidden`}>
+                                    <Image
+                                        className={`w-full h-full object-fit block transition-transform duration-300 ease-in-out hover:scale-110`}
+                                        src={option.image}
+                                        alt={option.alt}
+                                        width={300}
+                                        height={300}
+                                    />
+                                </div>
                             </div>
                         </Link>
                     ))}
