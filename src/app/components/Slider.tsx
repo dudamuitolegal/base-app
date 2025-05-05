@@ -73,6 +73,11 @@ export default function Slider({bannersData}: SliderProps) {
                     })}
                 </Swiper>
             </div>
+            <div className={`px-2 mt-8 sm:px-8 md:px-12 xl:px-20  2xl:px-28 flex justify-center`}>
+                <h1 className={`uppercase prose prose-invert text-center font-bold text-2xl`}>
+                    {siteConfig.name}
+                </h1>
+            </div>
             <MorePay></MorePay>
         </>
 
