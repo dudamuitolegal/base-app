@@ -7,5 +7,5 @@ export const siteConfig = {
     ico: "/favicon.png",
     logoWidth: 70,
     logoHeight: 70,
-    bannersId: [1,2]
+    bannersId: [1,2,3,4]
 }

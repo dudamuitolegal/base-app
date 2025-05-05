@@ -1143,10 +1143,6 @@
     background-color: #1c533e;
   }
 
-  .bg-\[\#214F3C\] {
-    background-color: #214f3c;
-  }
-
   .bg-\[\#154633\] {
     background-color: #154633;
   }
@@ -1223,8 +1219,17 @@
     padding-bottom: calc(var(--spacing) * 2);
   }
 
+  .text-center {
+    text-align: center;
+  }
+
   .text-left {
     text-align: left;
+  }
+
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
 
   .text-lg {

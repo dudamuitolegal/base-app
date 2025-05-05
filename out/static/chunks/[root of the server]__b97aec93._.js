@@ -49,7 +49,9 @@ const siteConfig = {
     logoHeight: 70,
     bannersId: [
         1,
-        2
+        2,
+        3,
+        4
     ]
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
