@@ -4,15 +4,13 @@
 
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from 'swiper/modules';
 import Link from "next/link";
 import Image from 'next/image';
-
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import {siteConfig} from "@/utils/siteConfig";
 import MorePay from "@/app/components/MorePay";
-
+import 'swiper/css';
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import {siteConfig} from "@/utils/siteConfig";
 
 interface BannerData {
     id: number;
@@ -28,19 +26,12 @@ interface SliderProps {
 }
 
 export default function Slider({bannersData}: SliderProps) {
-
     return (
         <>
-            <div className="w-full px-2 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
+            <div className="w-full mt-4">
                 <Swiper
-                    modules={[Autoplay]}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false
-                    }}
-                    spaceBetween={10}
                     slidesPerView={1}
-                    loop={bannersData.length > 1}
+                    spaceBetween={30}
                     className="mySwiper"
                 >
                     {bannersData.map((banner) => {
@@ -48,7 +39,6 @@ export default function Slider({bannersData}: SliderProps) {
                             console.warn("Banner inválido ou incompleto no map:", banner);
                             return null;
                         }
-
                         return (
                             <SwiperSlide key={banner.id} className="rounded-lg">
                                 <Link target="_blank" rel="noopener noreferrer" href={siteConfig.defaultLink}>
@@ -58,7 +48,7 @@ export default function Slider({bannersData}: SliderProps) {
                                         )}
                                         <source media="(min-width: 1024px)" srcSet={banner.imageDesktop}/>
                                         <Image
-                                            className="rounded-lg border-2 border-[#f6f3f436] object-cover w-full h-auto block"
+                                            className="rounded-2xl border-2 border-[#f6f3f436] object-cover object-contain block"
                                             src={banner.imageDesktop}
                                             width={banner.width}
                                             height={banner.height}
@@ -73,8 +63,8 @@ export default function Slider({bannersData}: SliderProps) {
                     })}
                 </Swiper>
             </div>
-            <div className={`px-2 mt-8 sm:px-8 md:px-12 xl:px-20  2xl:px-28 flex justify-center`}>
-                <h1 className={`uppercase prose prose-invert text-center font-bold text-2xl`}>
+            <div className={`px-2 mt-4 sm:px-8 md:px-12 xl:px-20  2xl:px-28 flex justify-center`}>
+                <h1 className={`uppercase prose dark:prose-invert text-center font-bold text-2xl`}>
                     {siteConfig.name}
                 </h1>
             </div>

@@ -55,18 +55,16 @@ const slides = [
 export default function MorePay() {
     return (
         <>
-            <div className="px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
-                <h2 className="text-white flex items-center gap-1 font-bold text-lg xl:text-2xl">
-                    <span className="bg-white rounded-full p-1">
-                        <DollarSign className={`xl:hidden`} strokeWidth={2} size={20} color='#000'/>
-                        <DollarSign className={`hidden xl:block`} strokeWidth={2} size={24} color='#000'/>
-                    </span>
-                    Pagando mais hoje
-                </h2>
+            <div
+                className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl mt-4">
+                <div className="flex items-center gap-4 justify-between">
+                    <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}><DollarSign
+                        className={`w-5 h-5 sm:h-7 sm:w-7`}/>Pagando mais hoje</h2>
+                </div>
                 <Swiper
-                    className="mt-2"
+                    className="mt-2 max-h-84 sm:max-h-64 md:max-h-94 2xl:max-h-120"
                     modules={[Autoplay]}
-                    autoplay={{delay: 3000}}
+                    autoplay={{delay: 6000}}
                     spaceBetween={10}
                     slidesPerView={2.5}
                     breakpoints={{
@@ -74,9 +72,15 @@ export default function MorePay() {
                             slidesPerView: 3.5
                         },
                         768: {
-                            slidesPerView: 4.5
+                            slidesPerView: 2.8
+                        },
+                        1024: {
+                            slidesPerView: 4.2
                         },
                         1280: {
+                          slidesPerView: 5.1
+                        },
+                        1536: {
                             slidesPerView: 5.5
                         }
                     }}
@@ -100,6 +104,8 @@ export default function MorePay() {
                                         width={300}
                                         height={300}
                                         alt={slide.alt}
+                                        title={slide.alt}
+                                        priority={true}
                                     />
                                 </div>
                                 <span className="text-white flex items-center gap-1 mt-1">
@@ -108,10 +114,9 @@ export default function MorePay() {
                                     </span>
                                     <div className="flex flex-col">
                                         <span
-                                            className="text-gray-300 uppercase font-semibold text-xs">Pagou hoje</span>
-
+                                            className="text-gray-800 dark:text-gray-300 uppercase font-semibold text-[10px] sm:text-sm">Pagou hoje</span>
                                         <span
-                                            className="text-yellow-400 font-bold text-xs">
+                                            className="text-yellow-800 dark:text-yellow-400 font-bold text-[10px] sm:text-xs">
                                             <span suppressHydrationWarning={true}>
                                             {priceUtils.generateRandomMillion()}
                                             </span>

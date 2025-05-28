@@ -35,7 +35,7 @@ export const SemanticReadMore = ({
                 aria-expanded={isExpanded}
             >
                 {/* Conteúdo semântico completo renderizado no SSR */}
-                <div className="prose">
+                <div className="prose dark:prose-invert">
                     {children}
                 </div>
             </div>
@@ -43,7 +43,7 @@ export const SemanticReadMore = ({
             {needsExpansion && (
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className="mt-4 text-primary font-semibold hover:underline focus:outline-none text-white"
+                    className="mt-4 text-primary font-semibold hover:underline focus:outline-none text-gray-900 dark:text-white"
                     aria-label={isExpanded ? "Recolher conteúdo" : "Expandir conteúdo"}
                 >
                     {isExpanded ? 'Leia menos' : 'Leia mais'}

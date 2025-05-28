@@ -1,11 +1,11 @@
 export const siteConfig = {
-    name: "468bet9",
-    url: "https://468bet9.com.br",
+    name: "Base App",
+    url: "https://base-app.com.br",
     analytics: "",
-    defaultLink: "",
-    logo: "/favicon.png",
+    defaultLink: "zzz",
+    logo: "/logo.png",
     ico: "/favicon.png",
-    logoWidth: 70,
-    logoHeight: 70,
-    bannersId: [1,2,3,4]
+    logoWidth: 100,
+    logoHeight: 100,
+    bannersId: [1,2]
 }

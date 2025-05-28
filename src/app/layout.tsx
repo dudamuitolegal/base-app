@@ -1,10 +1,13 @@
 import type {Metadata} from "next";
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer'
+import {SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar"
+import {AppSidebar} from "@/app/components/app-sidebar"
 import {siteConfig} from "@/utils/siteConfig";
 import "./globals.css";
 import {Poppins} from "next/font/google";
 import Script from "next/script";
+import {ThemeProvider} from "@/app/components/theme-provider"
+import Footer from "@/app/components/Footer";
 
 const poppins = Poppins({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -48,9 +51,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="pt-br">
+        <html lang="pt-br" suppressHydrationWarning>
         <head>
-            <link rel="icon" href={siteConfig.ico} />
+            <link rel="icon" href={siteConfig.ico}/>
             <Script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics}`}
@@ -66,18 +69,25 @@ export default function RootLayout({
             </Script>
         </head>
         <body
-            className={`antialiased bg-[#154633] ${poppins.className}`}
-            style={{backgroundImage: `url(bg-pattern.avif)`}}
+            className={`antialiased bg-white dark:bg-gray-950 ${poppins.className}`}
         >
-        <Header/>
-        <main>
-            <div className={`mt-2`}>
-                {children}
-            </div>
-        </main>
-        <footer className={`container mx-auto mb-24 lg:mb-0`}>
-            <Footer/>
-        </footer>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <SidebarProvider>
+                <div className={`flex w-full`}>
+                    <AppSidebar/>
+                    <main className={`grow-1 overflow-x-auto`}>
+                        <Header> <SidebarTrigger/> </Header>
+                        {children}
+                        <Footer/>
+                    </main>
+                </div>
+            </SidebarProvider>
+        </ThemeProvider>
 
         </body>
         </html>

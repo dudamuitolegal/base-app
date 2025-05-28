@@ -4,9 +4,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from 'swiper/modules';
 import Link from "next/link";
 import Image from 'next/image';
-import {User, Spade, Flame, Rocket} from 'lucide-react';
-import priceUtils from "@/utils/formatPrice";
-import {CircleFlag} from 'react-circle-flags'
+import {Spade, Rocket, Play, Heart, CircleArrowDown, Clover} from 'lucide-react';
 import {siteConfig} from "@/utils/siteConfig";
 
 const PragmaticPlayIcon = () => (
@@ -95,25 +93,25 @@ export default function Info() {
     const slides = [
         {
             id: 1,
-            alt: "",
+            alt: "Evolution Play",
             image: "/home/category-images/evolution.webp",
             svg: EvolutionPlayIcon
         },
         {
             id: 2,
-            alt: "",
+            alt: "Pragmatic Play",
             image: "/home/category-images/pragmaticplay.webp",
             svg: PragmaticPlayIcon
         },
         {
             id: 3,
-            alt: "",
+            alt: "Ezugi",
             image: "/home/category-images/ezugi.webp",
             svg: EzugiIcon
         },
         {
             id: 4,
-            alt: "",
+            alt: "Lucky Streak",
             image: "/home/category-images/luckystreak.webp",
             svg: LuckyStreakIcon
         },
@@ -163,272 +161,168 @@ export default function Info() {
 
     return (
         <>
-            <div className="px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
-                <h2 className="text-white flex items-center gap-1 font-bold text-xl xl:text-2xl">
-                    <span className="bg-white rounded-full p-1">
-                        <Spade size={20} strokeWidth={3} color='#000'/>
-                    </span>
-                    Cassino ao Vivo
-                </h2>
-                <Swiper
-                    className="mt-2"
-                    modules={[Autoplay]}
-                    autoplay={{delay: 3000}}
-                    spaceBetween={10}
-                    slidesPerView={2.5}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 3.5
-                        },
-                        768: {
-                            slidesPerView: 4
-                        }
-
-
-                    }}
-                >
-                    {slides.map((slide) => (
-                        <SwiperSlide style={{transition: '0.3s'}}
-                                     key={slide.id}>
-                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
-                                <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
-                                    <User color="#3CD921" size={20}/>
-                                    {priceUtils.generateRandomThreeDigits()}
-                                </span>
-                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+            <div className="flex flex-col gap-8">
+                <div
+                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2`}>
+                    <div className="flex items-center gap-4 justify-between">
+                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
+                            <Clover
+                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Top jogos</h2>
+                        <Link
+                            className={`text-[10px] underline text-primary-800 dark:text-primary-500 sm:text-sm`}
+                            href={`/`}>Mostrar
+                            tudo</Link>
+                    </div>
+                    <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6`}>
+                        {popularSlides.map((slide) => (
+                            <Link href={siteConfig.defaultLink} key={slide.id} target="_blank"
+                                  rel="noopener noreferrer">
+                                <div className={`effect-cards rounded-xl overflow-hidden relative`}>
                                     <Image
-                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
-                                        src={slide.image}
-                                        width={500}
-                                        height={500}
-                                        alt={slide.alt}
-                                    />
-                                </div>
-                                <div style={{
-                                    background: 'linear-gradient(357.83deg, #121611 30.86%, rgba(11, 8, 15, 0) 99.85%)'
-                                }}
-                                     className={`absolute rounded-lg bottom-0 w-full h-2/6`}>
-                                    <slide.svg/>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-
-
-            <div className="px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
-                <h2 className="text-white flex items-center gap-1 font-bold text-xl xl:text-2xl">
-                    <span className="bg-white rounded-full p-1">
-                        <Flame strokeWidth={3} size={20} color='#000'/>
-                    </span>
-                    Jogos Populares
-                </h2>
-                <Swiper
-                    className="mt-2"
-                    modules={[Autoplay]}
-                    autoplay={{delay: 3000}}
-                    spaceBetween={10}
-                    slidesPerView={2.5}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 3.5
-                        },
-                        768: {
-                            slidesPerView: 4.5
-                        },
-                        1280: {
-                            slidesPerView: 5.5
-                        }
-                    }}
-                >
-                    {popularSlides.map((slide) => (
-                        <SwiperSlide style={{transition: '0.3s'}}
-                                     key={slide.id}>
-                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
-                                <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
-                                    <User color="#3CD921" size={20}/>
-                                    {priceUtils.generateRandomThreeDigits()}
-                                </span>
-                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
-                                    <Image
-                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
-                                        src={slide.image}
                                         width={300}
                                         height={300}
+                                        src={slide.image}
                                         alt={slide.alt}
+                                        title={slide.alt}
                                     />
+                                    <div
+                                        className="overlay"
+                                        aria-hidden="true"
+                                    ></div>
+                                    <div className="play">
+                                        <Play className={`text-white`}/>
+                                    </div>
+                                    <div className="heart">
+                                        <Heart className={`text-white`}
+                                               size={20}/>
+                                    </div>
                                 </div>
                             </Link>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
+                        ))}
+                        <div className="relative">
+                            <Link href={siteConfig.defaultLink} target="_blank"
+                                  rel="noopener noreferrer">
+                                <Image
+                                    width={300}
+                                    height={300}
+                                    src="/home/games-images/fortune-tiger.webp"
+                                    alt="Mais"
+                                    title="Mais"
+                                    className={`rounded-xl border border-gray-200`}
+                                />
+                                <div
+                                    className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col gap-2 text-white">
+                                    Mais
+                                    <CircleArrowDown className={`text-white`}></CircleArrowDown>
+                                </div>
+                                <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#0d0d0de8] rounded-lg">
 
-
-            <div className={`px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28`}>
-                <div className="relative overflow-x-auto">
-                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead
-                            className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
-                                Principais Campeonatos
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {/* Campeonatos Brasileiros */}
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="br" className="w-6 h-6"/>
-                                    Brasileirão Série A
-                                </Link>
-
-                            </td>
-
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="br" className="w-6 h-6"/>
-                                    Copa do Brasil
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" className={`px-6 py-4 flex items-center gap-3`}
-                                      href={siteConfig.defaultLink}>
-                                    <CircleFlag countryCode="br" className="w-6 h-6"/>
-                                    Paulista
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="south-america" className="w-6 h-6"/>
-                                    Copa Libertadores
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="south-america" className="w-6 h-6"/>
-                                    Copa Sul-Americana
-                                </Link>
-                            </td>
-                        </tr>
-
-                        {/* Ligas Europeias */}
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="es" className="w-6 h-6"/>
-                                    LaLiga Espanha
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="gb" className="w-6 h-6"/>
-                                    Premier League Inglaterra
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="de" className="w-6 h-6"/>
-                                    Bundesliga Alemanha
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="it" className="w-6 h-6"/>
-                                    Serie A Itália
-                                </Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white dark:bg-gray-800">
-                            <td>
-                                <Link rel="noopener noreferrer" href={siteConfig.defaultLink}
-                                      className={`px-6 py-4 flex items-center gap-3`}>
-                                    <CircleFlag countryCode="fr" className="w-6 h-6"/>
-                                    Liga 1 França
-                                </Link>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div
+                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2`}>
+                    <div className="flex items-center gap-4 justify-between">
+                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
+                            <Spade
+                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Cassino ao vivo</h2>
+                    </div>
+                    <div className={`grid grid-cols-2 gap-4 sm:grid-cols-4`}>
+                        {slides.map((slide) => (
+                            <Link href={siteConfig.defaultLink} key={slide.id} target="_blank"
+                                  rel="noopener noreferrer">
+                                <div className={`effect-cards rounded-xl overflow-hidden relative`}>
+                                    <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+                                        <Image
+                                            className="block"
+                                            src={slide.image}
+                                            width={500}
+                                            height={500}
+                                            alt={slide.alt}
+                                            title={slide.alt}
+                                        />
+                                    </div>
+                                    <div style={{
+                                        background: 'linear-gradient(357.83deg, #121611 30.86%, rgba(11, 8, 15, 0) 99.85%)'
+                                    }}
+                                         className={`absolute rounded-lg bottom-0 w-full h-2/6`}>
+                                        <slide.svg/>
+                                    </div>
+                                    <div
+                                        className="overlay"
+                                        aria-hidden="true"
+                                    ></div>
+                                    <div className="play">
+                                        <Play className={`text-white`}/>
+                                    </div>
+                                    <div className="heart">
+                                        <Heart className={`text-white`}
+                                               size={20}/>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+                <div
+                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl`}>
+                    <div className="flex items-center gap-4 justify-between">
+                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
+                            <Rocket
+                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Lançamentos</h2>
+                    </div>
+                    <Swiper
+                        modules={[Autoplay]}
+                        autoplay={{delay: 3000}}
+                        spaceBetween={10}
+                        slidesPerView={2.5}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 3.5
+                            },
+                            768: {
+                                slidesPerView: 2.5
+                            },
+                            1024: {
+                                slidesPerView: 3.8
+                            },
+                            1280: {
+                                slidesPerView: 5.5
+                            }
 
-            <div className="px-2 mt-8 sm:px-8 md:px-12 xl:px-20 2xl:px-28">
-                <h2 className="text-white flex items-center gap-1 font-bold text-xl xl:text-2xl">
-                    <span className="bg-white rounded-full p-1">
-                        <Rocket strokeWidth={2} color='#000'/>
-                    </span>
-                    Lançamentos
-                </h2>
-                <Swiper
-                    className="mt-2"
-                    modules={[Autoplay]}
-                    autoplay={{delay: 3000}}
-                    spaceBetween={10}
-                    slidesPerView={2.5}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 3.5
-                        },
-                        768: {
-                            slidesPerView: 4.5
-                        },
-                        1280: {
-                            slidesPerView: 5.5
-                        }
-
-                    }}
-                >
-                    {releaseSlides.map((slide) => (
-                        <SwiperSlide style={{transition: '0.3s'}}
-                                     key={slide.id}>
-                            <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
-                                <span
-                                    className="absolute left-2 top-2 flex gap-1 bg-[#000000a8] text-white text-xs items-center rounded-lg p-1 z-10">
-                                    <User color="#3CD921" size={20}/>
-                                    {priceUtils.generateRandomThreeDigits()}
-                                </span>
-                                <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
+                        }}
+                    >
+                        {releaseSlides.map((slide) => (
+                            <SwiperSlide style={{transition: '0.3s'}}
+                                         key={slide.id}
+                                         className={`effect-cards overflow-hidden rounded-lg`}>
+                                <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
                                     <Image
-                                        className="block transition-transform duration-300 ease-in-out hover:scale-110"
+                                        className="block"
                                         src={slide.image}
                                         width={300}
                                         height={300}
                                         alt={slide.alt}
+                                        title={slide.alt}
                                     />
+                                </Link>
+                                <div
+                                    className="overlay"
+                                    aria-hidden="true"
+                                ></div>
+                                <div className="play">
+                                    <Play className={`text-white`}/>
                                 </div>
-                            </Link>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                                <div className="heart">
+                                    <Heart className={`text-white`}
+                                           size={20}/>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
         </>
     );
