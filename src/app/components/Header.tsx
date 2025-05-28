@@ -12,7 +12,6 @@ import {
 } from "lucide-react"
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area"
 import {buttonVariants} from "@/components/ui/button";
-import {ThemeToggle} from "@/app/components/theme-toggle";
 
 const poppins = Poppins({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
