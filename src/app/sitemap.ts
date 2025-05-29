@@ -1,4 +1,8 @@
+export const dynamic = "force-static"
+
 import {MetadataRoute} from 'next'
+
+type ChangeFreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
 import {siteConfig} from '@/utils/siteConfig'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,14 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: siteConfig.url,
             lastModified: new Date(),
-            changeFrequency: 'daily',
+            changeFrequency: 'weekly' as ChangeFreq,
             priority: 1,
-        },
-        {
-            url: `${siteConfig.url}/`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.8,
         }
     ]
 }

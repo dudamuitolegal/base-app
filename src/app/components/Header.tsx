@@ -48,6 +48,7 @@ export const itemsNav = [
         icon: Star,
     }
 ]
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 export default function Header({children}) {
     return (
@@ -98,7 +99,7 @@ export default function Header({children}) {
                                 rel="noopener noreferrer"
                                 href={siteConfig.defaultLink}
                                 key={item.title}
-                                className={`group flex flex-col gap-1 items-center md:flex-row transition-colors duration-200`} // <--- ADD 'group' HERE
+                                className={`group flex flex-col gap-1 items-center md:flex-row transition-colors duration-200`}
                             >
         <span>
             {item.icon && (
