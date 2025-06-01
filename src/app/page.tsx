@@ -2,7 +2,6 @@ import {siteConfig} from "@/utils/siteConfig"; // Mantenha este
 import Slider from "@/app/components/Slider";
 import Options from "@/app/components/Options"
 import Info from "@/app/components/Info"
-import {SemanticReadMore} from '@/app/components/SemanticReadmore';
 import "swiper/css";
 
 async function fetchBannerData(id: number | string) {
@@ -74,9 +73,6 @@ export default async function Home() {
 
                 <section className={`container mx-auto max-w-screen-xl`}>
                     <article className="py-8 px-2 sm:px-8 md:px-12 xl:px-20 2xl:px-28 flex justify-center">
-                        <SemanticReadMore initialHeight="160px">
-                            <p>oiiiiiiiii</p>
-                        </SemanticReadMore>
                     </article>
                 </section>
             </div>
