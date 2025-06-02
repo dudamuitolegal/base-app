@@ -5,7 +5,7 @@ export const siteConfig = {
     defaultLink: "https://go.aff.upbet.com/ce4vkzl5",
     logo: "/logo.png",
     ico: "/favicon.png",
-    logoWidth: 50,
-    logoHeight: 50,
+    logoWidth: 110,
+    logoHeight: 110,
     bannersId: [1,2]
 }
