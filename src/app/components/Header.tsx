@@ -64,7 +64,7 @@ export default function Header({children}) {
                         <Link href="/" target="_blank" rel="noopener noreferrer"
                               className="flex items-center flex-col">
                             <Image
-                                className={`bg-black px-[5px] rounded-md`}
+                                className={`dark:invert`}
                                 src={siteConfig.logo}
                                 alt="Logo"
                                 width={siteConfig.logoWidth}
