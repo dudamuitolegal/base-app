@@ -2,7 +2,7 @@ export const siteConfig = {
     name: "Base App",
     url: "https://base-app.com.br",
     analytics: "",
-    defaultLink: "https://go.aff.upbet.com/ce4vkzl5",
+    defaultLink: "https://go.aff.upbet.com/2lno9izk",
     logo: "/logo.png",
     ico: "/favicon.png",
     logoWidth: 110,
