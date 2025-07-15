@@ -4,11 +4,12 @@ import { siteConfig } from "@/utils/siteConfig";
 const nextConfig: NextConfig = {
     output: "export",
     distDir: "out",
+    images: {unoptimized: true},
     async redirects() {
         return [
             {
                 source: "/go/:path*",
-                destination: siteConfig.defaultLink,
+                destination: siteConfig.affiliateLink,
                 permanent: false,
             },
         ];
