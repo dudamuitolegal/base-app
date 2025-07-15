@@ -1,11 +1,10 @@
 'use client';
 import React from 'react'
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from 'swiper/modules';
 import Link from "next/link";
 import Image from 'next/image';
-import {Spade, Rocket, Play, Heart, CircleArrowDown, Clover} from 'lucide-react';
+import {Spade, Play, Heart, CircleArrowDown, Clover} from 'lucide-react';
 import {siteConfig} from "@/utils/siteConfig";
+import ReleaseSlider from "@/app/components/ReleaseSlider";
 
 const PragmaticPlayIcon = () => (
     <svg fill="none" viewBox="0 0 150 56" xmlns="http://www.w3.org/2000/svg">
@@ -95,234 +94,127 @@ export default function Info() {
             id: 1,
             alt: "Evolution Play",
             image: "/home/category-images/evolution.webp",
-            svg: EvolutionPlayIcon
+            svg: EvolutionPlayIcon,
+            link: "evolution-play"
         },
         {
             id: 2,
             alt: "Pragmatic Play",
             image: "/home/category-images/pragmaticplay.webp",
-            svg: PragmaticPlayIcon
+            svg: PragmaticPlayIcon,
+            link: "pragmatic-play"
         },
         {
             id: 3,
             alt: "Ezugi",
             image: "/home/category-images/ezugi.webp",
-            svg: EzugiIcon
+            svg: EzugiIcon,
+            link: "ezugi"
         },
         {
             id: 4,
             alt: "Lucky Streak",
             image: "/home/category-images/luckystreak.webp",
-            svg: LuckyStreakIcon
+            svg: LuckyStreakIcon,
+            link: "lucky-streak"
         },
-
-
     ];
     const popularSlides = [
-        {id: 1, alt: "Might Of Freya", image: "/home/games-images/might-of-freya.webp"},
-        {id: 8, alt: "Oishi Delights", image: "/home/games-images/oishi-delights.webp"},
-        {id: 2, alt: "Angel Vs Sinner", image: "/home/games-images/angel-vs-sinner.webp"},
-        {id: 3, alt: "Circus Delight", image: "/home/games-images/circis-delight.webp"},
-        {id: 4, alt: "Cocktail Nights", image: "/home/games-images/cocktail-nights.webp"},
-        {id: 5, alt: "Eternal Empress Freeze Time", image: "/home/games-images/eternal-empress-freeze-time.webp"},
-        {id: 6, alt: "Geisha's Revenge", image: "/home/games-images/geisha's-revenge.webp"},
-        {id: 7, alt: "Hot Fiesta", image: "/home/games-images/hot-fiesta.webp"},
-        {id: 9, alt: "Rio Fantasia", image: "/home/games-images/rio-fantasia.webp"},
-        {id: 10, alt: "Starlight Princess", image: "/home/games-images/starlight-princess.webp"},
-        {id: 11, alt: "Super Cole Drive", image: "/home/games-images/super-cole-drive.webp"},
-
-
-    ];
-
-    const releaseSlides = [
-        {id: 2, alt: "1001 Mystery Genie Fortunes", image: "/home/games-images/1001mysterygeniefortunes_icon.webp"},
-        {id: 3, alt: "Anubisii Double Max", image: "/home/games-images/anubisiidoublemax_icon.webp"},
-        {id: 4, alt: "Dragons Blessings Loot Link", image: "/home/games-images/dragonsblessingslootlink_icon.webp"},
-        {id: 5, alt: "Easter Classics", image: "/home/games-images/easterclassics_icon.webp"},
-        {id: 6, alt: "Fortune Crown", image: "/home/games-images/fortunecrown_icon.webp"},
-        {id: 7, alt: "King Of The Sky", image: "/home/games-images/kingofthesky_icon.webp"},
-        {id: 8, alt: "Lava Burst", image: "/home/games-images/lavaburst_icon.webp"},
-        {id: 9, alt: "Piggy Mania", image: "/home/games-images/piggymania_icon.webp"},
-        {id: 10, alt: "Ride The Lightning", image: "/home/games-images/ridethelightning_icon.webp"},
-        {id: 11, alt: "Rush Riches", image: "/home/games-images/rushriches_icon.webp"},
+        {id: 1, alt: "Might Of Freya", image: "/home/games-images/might-of-freya.webp", link: "might-of-freya"},
+        {id: 8, alt: "Oishi Delights", image: "/home/games-images/oishi-delights.webp", link: "oishi-delights"},
+        {id: 2, alt: "Angel Vs Sinner", image: "/home/games-images/angel-vs-sinner.webp", link: "angel-vs-sinner"},
+        {id: 3, alt: "Circus Delight", image: "/home/games-images/circis-delight.webp", link: "circus-delight"},
+        {id: 4, alt: "Cocktail Nights", image: "/home/games-images/cocktail-nights.webp", link: "cocktail-nights"},
         {
-            id: 12,
-            alt: "Trinity Pharaoh Link Running Wins",
-            image: "/home/games-images/trinitypharaohlinkrunningwins_icon.webp"
+            id: 5,
+            alt: "Eternal Empress Freeze Time",
+            image: "/home/games-images/eternal-empress-freeze-time.webp",
+            link: "eternal-empress-freeze-time"
         },
+        {id: 6, alt: "Geisha's Revenge", image: "/home/games-images/geisha's-revenge.webp", link: "geishas-revenge"},
+        {id: 7, alt: "Hot Fiesta", image: "/home/games-images/hot-fiesta.webp", link: "hot-fiesta"},
+        {id: 9, alt: "Rio Fantasia", image: "/home/games-images/rio-fantasia.webp", link: "rio-fantasia"},
         {
-            id: 13,
-            alt: "Vikings Go To Olympus Wild Fight",
-            image: "/home/games-images/vikingsgotoolympuswildfight_icon.webp"
+            id: 10,
+            alt: "Starlight Princess",
+            image: "/home/games-images/starlight-princess.webp",
+            link: "starlight-princess"
         },
-        {id: 14, alt: "Wild Calacas", image: "/home/games-images/wildcalacas_icon.webp"}
+        {id: 11, alt: "Super Cole Drive", image: "/home/games-images/super-cole-drive.webp", link: "super-cole-drive"},
     ];
-
 
     return (
         <>
             <div className="flex flex-col gap-8">
-                <div
-                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2`}>
+                <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2">
                     <div className="flex items-center gap-4 justify-between">
-                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
-                            <Clover
-                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Top jogos</h2>
-                        <Link
-                            className={`text-[10px] underline text-primary-800 dark:text-primary-500 sm:text-sm`}
-                            href={`/`}>Mostrar
-                            tudo</Link>
+                        <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
+                            <Clover className="w-6 h-6"/>Top jogos
+                        </h2>
+                        <Link className="text-xs underline text-primary-800 dark:text-primary-500"
+                              href={siteConfig.defaultLink}>
+                            Mostrar tudo
+                        </Link>
                     </div>
-                    <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6`}>
+                    <div className="grid grid-cols-2 gap-4">
                         {popularSlides.map((slide) => (
-                            <Link href={siteConfig.defaultLink} key={slide.id} target="_blank"
+                            <Link href={`${siteConfig.defaultLink}${slide.link}`} key={slide.id} target="_blank"
                                   rel="noopener noreferrer">
-                                <div className={`effect-cards rounded-xl overflow-hidden relative`}>
-                                    <Image
-                                        width={300}
-                                        height={300}
-                                        src={slide.image}
-                                        alt={slide.alt}
-                                        title={slide.alt}
-                                    />
-                                    <div
-                                        className="overlay"
-                                        aria-hidden="true"
-                                    ></div>
-                                    <div className="play">
-                                        <Play className={`text-white`}/>
-                                    </div>
-                                    <div className="heart">
-                                        <Heart className={`text-white`}
-                                               size={20}/>
-                                    </div>
+                                <div className="effect-cards rounded-xl overflow-hidden relative">
+                                    <Image width={300} height={300} src={slide.image} alt={slide.alt}
+                                           title={slide.alt} loading="lazy"/>
+                                    <div className="overlay" aria-hidden="true"></div>
+                                    <div className="play"><Play className="text-white"/></div>
+                                    <div className="heart"><Heart className="text-white" size={20}/></div>
                                 </div>
                             </Link>
                         ))}
                         <div className="relative">
-                            <Link href={siteConfig.defaultLink} target="_blank"
-                                  rel="noopener noreferrer">
-                                <Image
-                                    width={300}
-                                    height={300}
-                                    src="/home/games-images/fortune-tiger.webp"
-                                    alt="Mais"
-                                    title="Mais"
-                                    className={`rounded-xl border border-gray-200`}
-                                />
+                            <Link href={`${siteConfig.defaultLink}fortune-tiger`} target="_blank" rel="noopener noreferrer">
+                                <Image width={300} height={300} src="/home/games-images/fortune-tiger.webp"
+                                       alt="Mais" title="Mais" className="rounded-xl border border-gray-200"
+                                       loading="lazy"/>
                                 <div
                                     className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col gap-2 text-white">
-                                    Mais
-                                    <CircleArrowDown className={`text-white`}></CircleArrowDown>
+                                    Mais <CircleArrowDown className="text-white"></CircleArrowDown>
                                 </div>
-                                <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#0d0d0de8] rounded-lg">
-
-                                </div>
+                                <div
+                                    className="absolute top-0 left-0 right-0 bottom-0 bg-[#0d0d0de8] rounded-lg"></div>
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div
-                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2`}>
+
+                {/* --- Seção Cassino ao Vivo --- */}
+                <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2">
                     <div className="flex items-center gap-4 justify-between">
-                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
-                            <Spade
-                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Cassino ao vivo</h2>
+                        <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
+                            <Spade className="w-6 h-6"/>Cassino ao vivo
+                        </h2>
                     </div>
-                    <div className={`grid grid-cols-2 gap-4 sm:grid-cols-4`}>
+                    <div className="grid grid-cols-2 gap-4">
                         {slides.map((slide) => (
-                            <Link href={siteConfig.defaultLink} key={slide.id} target="_blank"
+                            <Link href={`${siteConfig.defaultLink}${slide.link}`} key={slide.id} target="_blank"
                                   rel="noopener noreferrer">
-                                <div className={`effect-cards rounded-xl overflow-hidden relative`}>
-                                    <div className={`rounded-lg border-2 border-[#f6f3f436] overflow-hidden`}>
-                                        <Image
-                                            className="block"
-                                            src={slide.image}
-                                            width={500}
-                                            height={500}
-                                            alt={slide.alt}
-                                            title={slide.alt}
-                                        />
-                                    </div>
-                                    <div style={{
-                                        background: 'linear-gradient(357.83deg, #121611 30.86%, rgba(11, 8, 15, 0) 99.85%)'
-                                    }}
-                                         className={`absolute rounded-lg bottom-0 w-full h-2/6`}>
-                                        <slide.svg/>
+                                <div className="effect-cards rounded-xl overflow-hidden relative">
+                                    <div className="rounded-lg border-2 border-[#f6f3f436] overflow-hidden">
+                                        <Image className="block" src={slide.image} width={500} height={500}
+                                               alt={slide.alt} title={slide.alt} loading="lazy"/>
                                     </div>
                                     <div
-                                        className="overlay"
-                                        aria-hidden="true"
-                                    ></div>
-                                    <div className="play">
-                                        <Play className={`text-white`}/>
+                                        style={{background: 'linear-gradient(357.83deg, #121611 30.86%, rgba(11, 8, 15, 0) 99.85%)'}}
+                                        className="absolute rounded-lg bottom-0 w-full h-2/6">
+                                        <slide.svg/>
                                     </div>
-                                    <div className="heart">
-                                        <Heart className={`text-white`}
-                                               size={20}/>
-                                    </div>
+                                    <div className="overlay" aria-hidden="true"></div>
+                                    <div className="play"><Play className="text-white"/></div>
+                                    <div className="heart"><Heart className="text-white" size={20}/></div>
                                 </div>
                             </Link>
                         ))}
                     </div>
                 </div>
-                <div
-                    className={`p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl`}>
-                    <div className="flex items-center gap-4 justify-between">
-                        <h2 className={`flex gap-0.5 items-center prose dark:prose-invert sm:font-semibold sm:gap-2`}>
-                            <Rocket
-                                className={`w-5 h-5 sm:w-7 sm:h-7`}/>Lançamentos</h2>
-                    </div>
-                    <Swiper
-                        modules={[Autoplay]}
-                        autoplay={{delay: 3000}}
-                        spaceBetween={10}
-                        slidesPerView={2.5}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 3.5
-                            },
-                            768: {
-                                slidesPerView: 2.5
-                            },
-                            1024: {
-                                slidesPerView: 3.8
-                            },
-                            1280: {
-                                slidesPerView: 5.5
-                            }
-
-                        }}
-                    >
-                        {releaseSlides.map((slide) => (
-                            <SwiperSlide style={{transition: '0.3s'}}
-                                         key={slide.id}
-                                         className={`effect-cards overflow-hidden rounded-lg`}>
-                                <Link rel="noopener noreferrer" className="relative" href={siteConfig.defaultLink}>
-                                    <Image
-                                        className="block"
-                                        src={slide.image}
-                                        width={300}
-                                        height={300}
-                                        alt={slide.alt}
-                                        title={slide.alt}
-                                    />
-                                </Link>
-                                <div
-                                    className="overlay"
-                                    aria-hidden="true"
-                                ></div>
-                                <div className="play">
-                                    <Play className={`text-white`}/>
-                                </div>
-                                <div className="heart">
-                                    <Heart className={`text-white`}
-                                           size={20}/>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+                <ReleaseSlider/>
             </div>
         </>
     );

@@ -1,4 +1,3 @@
-// components/SemanticReadMore.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -34,7 +33,6 @@ export const SemanticReadMore = ({
                 style={{ '--initial-height': initialHeight } as React.CSSProperties}
                 aria-expanded={isExpanded}
             >
-                {/* Conteúdo semântico completo renderizado no SSR */}
                 <div className="prose dark:prose-invert">
                     {children}
                 </div>

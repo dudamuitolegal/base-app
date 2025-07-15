@@ -1,78 +1,71 @@
-import {siteConfig} from "@/utils/siteConfig"; // Mantenha este
 import Slider from "@/app/components/Slider";
 import Options from "@/app/components/Options"
 import Info from "@/app/components/Info"
-import "swiper/css";
+import LazyMorePay from "@/app/components/LazyMorePay"
+import {siteConfig} from "@/utils/siteConfig";
+import React from "react";
 
-async function fetchBannerData(id: number | string) {
-    const BANNER_API_URL = process.env.BANNER_API_URL;
 
-    if (!id || !BANNER_API_URL) {
-        console.error("fetchBannerData: ID ou BANNER_API_URL ausente.");
-        return null;
-    }
+interface BannerData {
+    linkUrl?: string;
+    id: number;
+    alt: string;
+    imageMobile?: string;
+    imageDesktop: string;
+    width: number;
+    height: number;
+    widthMobile?: number;
+    heightMobile?: number;
+}
+
+async function fetchBannersList(): Promise<BannerData[]> {
+    const BANNERS_API_URL = "https://blog.up.bet.br/banner.json";
 
     try {
-        const siteNameParam = encodeURIComponent(siteConfig.name || 'Website');
-        const apiUrl = `${BANNER_API_URL}?id=${id}&siteName=${siteNameParam}`;
-        const res = await fetch(apiUrl, {
-            next: {
-                revalidate: 60 * 5
-            }
+        const response = await fetch(`${BANNERS_API_URL}?v=${Date.now()}`, {
+            next: {revalidate: 300}
         });
-        if (!res.ok) {
-            console.error(`Falha ao buscar banner ${id}: ${res.status} ${res.statusText}`);
-            try {
-                const errorBody = await res.json();
-                console.error("API Error Body:", errorBody);
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            } catch (e) {
-            }
-            return null;
+
+        if (!response.ok) {
+            throw new Error("falha ao buscar a lista de banners.");
         }
 
-        const data = await res.json();
-
-
-        if (!data || !data.id || !data.linkUrl || !data.alt || !data.imageDesktop) {
-            console.warn(`Dados incompletos recebidos para banner ID ${id}:`, data);
-            return null;
-        }
-        data.width = data.width || 1536;
-        data.height = data.height || 800;
-        data.widthMobile = data.widthMobile || data.width;
-        data.heightMobile = data.heightMobile || data.height;
-        return data;
+        const data: BannerData[] = await response.json();
+        return Array.isArray(data) ? data : [];
 
     } catch (error) {
-        console.error(`Erro de rede ou outro ao buscar banner ${id}:`, error);
-        return null;
+        console.error("erro ao processar dados dos banners:", error);
+        return [];
     }
 }
 
+
 export default async function Home() {
-    const requiredBannerIds = siteConfig.bannersId;
-    const bannerPromises = requiredBannerIds.map(id => fetchBannerData(id));
-    const results = await Promise.all(bannerPromises);
-    const validBannersData = results.filter(banner => banner !== null);
+    const bannersData = await fetchBannersList();
     return (
         <>
-            <div className={`flex flex-col gap-8 px-2 sm:px-8 md:px-12 xl:px-36 2xl:px-44`}>
-                <section className={`container mx-auto max-w-screen-xl`}>
-                    <Slider bannersData={validBannersData}></Slider>
+            <div className="flex flex-col gap-8 p-4 relative">
+                <section>
+                    <Slider bannersData={bannersData}/>
                 </section>
 
-
-                <section className={`container mx-auto max-w-screen-xl`}>
-                    <Info></Info>
+                <section>
+                    <h1 className="sr-only">
+                        {siteConfig.name}
+                    </h1>
+                    <LazyMorePay/>
                 </section>
 
-                <section className={`container mx-auto max-w-screen-xl`}>
-                    <Options></Options>
+                <section>
+                    <Info/>
                 </section>
 
-                <section className={`container mx-auto max-w-screen-xl`}>
-                    <article className="py-8 px-2 sm:px-8 md:px-12 xl:px-20 2xl:px-28 flex justify-center">
+                <section>
+                    <Options/>
+                </section>
+
+                <section>
+                    <article className="py-8 flex justify-center">
                     </article>
                 </section>
             </div>

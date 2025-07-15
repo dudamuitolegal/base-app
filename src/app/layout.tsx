@@ -1,4 +1,4 @@
-import type {Metadata} from "next";
+import type {Metadata, Viewport} from "next";
 import Header from '@/app/components/Header';
 import {SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar"
 import {AppSidebar} from "@/app/components/app-sidebar"
@@ -8,41 +8,69 @@ import {Poppins} from "next/font/google";
 import Script from "next/script";
 import {ThemeProvider} from "@/app/components/theme-provider"
 import Footer from "@/app/components/Footer";
+import Popup from "@/app/components/Popup";
 
 const poppins = Poppins({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
     subsets: ['latin'],
 })
 
-// meta tags gerais, para criar novas leia a documentação: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+export const viewport: Viewport = {
+    width: 320,
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+};
+
 export const metadata: Metadata = {
-    title: `${siteConfig.name} | Apostas Online & Cassino - Jogue Seguro`, // title padrão caso a página não tenha
-    description: `${siteConfig.name} Sua plataforma completa de apostas esportivas e cassino online. Odds competitivas, promoções exclusivas e 100% seguro. Cadastre-se!`, // descrição padrão caso a página não tenha
-    robots: 'index, follow',
+    metadataBase: new URL(siteConfig.url),
+
+    title: {
+        default: `${siteConfig.name} | Apostas Online & Cassino - Jogue Seguro`,
+        template: `%s | ${siteConfig.name}`,
+    },
+    description: siteConfig.description,
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    icons: {
+        icon: siteConfig.ico,
+        shortcut: siteConfig.ico,
+        apple: siteConfig.ico,
+    },
     alternates: {
-        canonical: siteConfig.url // canonical padrão caso a página não tenha
+        canonical: '/',
     },
     openGraph: {
         type: 'website',
         locale: 'pt_BR',
         url: siteConfig.url,
         siteName: siteConfig.name,
+        title: `${siteConfig.name} | Apostas Online & Cassino`,
+        description: siteConfig.description,
         images: [
             {
-                url: `${siteConfig.url}${siteConfig.logo}`, // imagem padrão para compartilhamento
-                width: siteConfig.logoWidth,
-                height: siteConfig.logoHeight,
-                alt: 'Logo',
-            }
-        ]
+                url: siteConfig.logo,
+                width: 1200,
+                height: 630,
+                alt: `Logo oficial de ${siteConfig.name} - Plataforma de Apostas Segura`,
+            },
+        ],
     },
-    // Twitter Cards
     twitter: {
         card: 'summary_large_image',
-        creator: siteConfig.url,
-        images: siteConfig.url + siteConfig.logo
+        title: `${siteConfig.name} | Apostas Online & Cassino`,
+        description: siteConfig.description,
+        images: [siteConfig.logo],
     },
-    metadataBase: new URL(siteConfig.url) // base para URLs relativos
 }
 
 export default function RootLayout({
@@ -52,43 +80,47 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br" suppressHydrationWarning>
-        <head>
-            <link rel="icon" href={siteConfig.ico}/>
-            <Script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics}`}
-                strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`
+        <body
+            className={`antialiased bg-gray-100 dark:bg-black ${poppins.className}`}
+        >
+
+        <div className="max-w-[430px] mx-auto min-h-screen bg-white dark:bg-gray-950 flex flex-col">
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="dark"
+                enableSystem
+                disableTransitionOnChange={true}
+            >
+                <SidebarProvider>
+                    <div className="flex flex-1 w-full">
+                        <AppSidebar/>
+                        <main className="flex-1 w-full flex flex-col overflow-x-hidden">
+                            <Header> <SidebarTrigger/> </Header>
+                            <div className="flex-1">
+                                {children}
+                            </div>
+                            <Footer/>
+                        </main>
+                    </div>
+                </SidebarProvider>
+            </ThemeProvider>
+        </div>
+
+        <Popup/>
+
+        <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analyticsId}`}
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${siteConfig.analytics}');
+              gtag('config', '${siteConfig.analyticsId}');
             `}
-            </Script>
-        </head>
-        <body
-            className={`antialiased bg-white dark:bg-gray-950 ${poppins.className}`}
-        >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange={true}
-        >
-            <SidebarProvider>
-                <div className={`flex w-full`}>
-                    <AppSidebar/>
-                    <main className={`grow-1 overflow-x-auto`}>
-                        <Header> <SidebarTrigger/> </Header>
-                        {children}
-                        <Footer/>
-                    </main>
-                </div>
-            </SidebarProvider>
-        </ThemeProvider>
-
+        </Script>
         </body>
         </html>
     );
