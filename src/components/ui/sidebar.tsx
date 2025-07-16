@@ -146,9 +146,6 @@ function SidebarProvider({
 
 function Sidebar({
                    side = "left",
-                   variant = "sidebar",
-                   collapsible = "offcanvas",
-                   className,
                    children,
                    ...props
                  }: React.ComponentProps<"div"> & {
@@ -212,7 +209,7 @@ function SidebarTrigger({
 // O resto dos componentes são "burros" e não precisam de grandes alterações.
 // Eles herdam o comportamento do pai. O importante é que os componentes
 // que têm lógica de desktop/mobile sejam corrigidos, o que já fizemos.
-function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
+function SidebarRail({}: React.ComponentProps<"button">) {
   return null // ALTERADO: Componente de desktop, não tem utilidade.
 }
 
