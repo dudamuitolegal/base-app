@@ -146,7 +146,7 @@ export default function Info() {
     return (
         <>
             <div className="flex flex-col gap-8">
-                <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2">
+                <div className="p-4 bg-[#6a728217] dark:bg-surface-accent rounded-xl flex flex-col gap-2">
                     <div className="flex items-center gap-4 justify-between">
                         <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
                             <Clover className="w-6 h-6"/>Top jogos
@@ -186,7 +186,7 @@ export default function Info() {
                 </div>
 
                 {/* --- Seção Cassino ao Vivo --- */}
-                <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl flex flex-col gap-2">
+                <div className="p-4 bg-[#6a728217] dark:bg-surface-accent rounded-xl flex flex-col gap-2">
                     <div className="flex items-center gap-4 justify-between">
                         <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
                             <Spade className="w-6 h-6"/>Cassino ao vivo

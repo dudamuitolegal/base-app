@@ -31,7 +31,7 @@ const releaseSlides = [
 
 export default function ReleaseSlider() {
     return (
-        <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl">
+        <div className="p-4 bg-[#6a728217] dark:bg-surface-accent rounded-xl">
             <div className="flex items-center gap-4 justify-between">
                 <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
                     <Rocket className="w-6 h-6"/>Lançamentos

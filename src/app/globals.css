@@ -6,6 +6,10 @@
 
 @theme {
 
+    --color-background: oklch(0.13 0.028 261.692);
+    --color-surface: oklch(0.21 0.034 264.665);
+    --color-surface-accent: oklch(0.21 0.034 264.665);
+
     --color-primary-50: oklch(0.96 0.025 195.74); /* Ligeiramente mais escuro/saturado q antes */
     --color-primary-100: oklch(0.92 0.04 195.74); /* Mais escuro/saturado */
     --color-primary-200: oklch(0.87 0.06 195.74); /* Ligeiramente mais escuro */
@@ -111,10 +115,12 @@
 .read-more-button:hover {
     text-decoration: underline;
 }
+
 .effect-cards {
     position: relative;
     border: 1px solid oklch(0.985 0.002 247.839 / 0.58);
 }
+
 @keyframes pulsePlay {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -129,6 +135,7 @@
         box-shadow: 0 0 0 0 oklch(0.43 0.075 195.74 / 0.7);
     }
 }
+
 .effect-cards img {
     display: block;
 }
@@ -149,6 +156,7 @@
 .effect-cards:hover .overlay {
     opacity: 1;
 }
+
 .effect-cards .play {
     position: absolute;
     top: 50%;
@@ -162,6 +170,7 @@
     padding: 10px;
     border-radius: 100%;
 }
+
 .effect-cards .heart {
     position: absolute;
     top: 12px;
@@ -172,21 +181,26 @@
     pointer-events: none;
 
 }
-.effect-cards:hover .play{
+
+.effect-cards:hover .play {
     opacity: 1;
     animation: pulsePlay 2s ease-in-out infinite;
 }
-.effect-cards:hover .heart{
+
+.effect-cards:hover .heart {
     opacity: 1;
 }
+
 .effect-cards .play > *,
 .effect-cards .heart > * {
     display: block;
     pointer-events: auto;
 }
+
 .effect-cards .play > * {
     font-size: 2.25rem;
 }
+
 .effect-cards .heart > * {
     font-size: 1.5rem;
 }

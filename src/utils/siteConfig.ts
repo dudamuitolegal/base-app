@@ -9,5 +9,4 @@ export const siteConfig = {
     logoHeight: 80,
     analyticsId: "",
     clarityId: "123",
-    description: "",
 }

@@ -78,7 +78,7 @@ export default function Header({children}) {
 
 
     return (
-        <header className={`${poppins.className} bg-gray-100 dark:bg-gray-900 py-2`}>
+        <header className={`${poppins.className} bg-gray-100 dark:bg-surface py-2 border-b border-gray-50/10`}>
             <nav className="flex flex-col gap-4 py-2 px-4">
                 <div className="flex justify-between items-center w-full">
                     <div>

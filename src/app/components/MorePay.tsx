@@ -75,7 +75,7 @@ const slides = [
 export default function MorePay() {
     return (
         <>
-            <div className="p-4 bg-[#6a728217] dark:bg-[#ffffff1c] rounded-xl mt-4">
+            <div className="p-4 bg-[#6a728217] dark:bg-surface-accent rounded-xl mt-4">
                 <div className="flex items-center gap-4 justify-between">
                     <h2 className="flex gap-2 items-center prose dark:prose-invert font-semibold">
                         <DollarSign className="w-6 h-6"/>Pagando mais hoje

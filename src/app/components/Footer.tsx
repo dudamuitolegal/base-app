@@ -58,7 +58,7 @@ const footerSectionsData = [
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-100 dark:bg-gray-900">
+        <footer className="bg-gray-100 dark:bg-surface border-t border-gray-50/10">
             <div className="w-full px-4 py-8">
                 <div className="grid grid-cols-2 gap-8 mb-8">
                     {footerSectionsData.map((section) => (
@@ -79,7 +79,6 @@ export default function Footer() {
                     ))}
                 </div>
 
-                {/* ALTERADO: Removido o margin responsivo. */}
                 <hr className="my-8 border-gray-200 dark:border-gray-700" />
 
 

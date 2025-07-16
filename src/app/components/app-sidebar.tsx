@@ -52,7 +52,7 @@ const items = [
 
 export function AppSidebar() {
     return (<Sidebar>
-            <SidebarContent className={`bg-gray-50 dark:bg-gray-950`}>
+            <SidebarContent className={`bg-gray-50 dark:bg-background`}>
                 <SidebarGroup className={`gap-12`}>
                     <SidebarGroupLabel className={`justify-between items-center`}>
                         {siteConfig.name}

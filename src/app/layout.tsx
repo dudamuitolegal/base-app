@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         default: `${siteConfig.name} | Apostas Online & Cassino - Jogue Seguro`,
         template: `%s | ${siteConfig.name}`,
     },
-    description: siteConfig.description,
+    description: `Jogue com segurança em um cassino online autorizado! Temos milhares de jogos: roleta, blackjack, jogos de slot e muito mais na ${siteConfig.name}`,
     robots: {
         index: true,
         follow: true,
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: siteConfig.url,
         siteName: siteConfig.name,
         title: `${siteConfig.name} | Apostas Online & Cassino`,
-        description: siteConfig.description,
+        description: `Jogue com segurança em um cassino online autorizado! Temos milhares de jogos: roleta, blackjack, jogos de slot e muito mais na ${siteConfig.name}`,
         images: [
             {
                 url: siteConfig.logo,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: `${siteConfig.name} | Apostas Online & Cassino`,
-        description: siteConfig.description,
+        description: `Jogue com segurança em um cassino online autorizado! Temos milhares de jogos: roleta, blackjack, jogos de slot e muito mais na ${siteConfig.name}`,
         images: [siteConfig.logo],
     },
 }
@@ -84,15 +84,15 @@ export default function RootLayout({
             className={`antialiased bg-gray-100 dark:bg-black ${poppins.className}`}
         >
 
-        <div className="max-w-[430px] mx-auto min-h-screen bg-white dark:bg-gray-950 flex flex-col">
+        <div className="max-w-[430px] mx-auto min-h-screen bg-white dark:bg-background flex flex-col">
             <ThemeProvider
                 attribute="class"
-                defaultTheme="dark"
+                forcedTheme="dark"
                 enableSystem
                 disableTransitionOnChange={true}
             >
                 <SidebarProvider>
-                    <div className="flex flex-1 w-full">
+                        <div className="flex flex-1 w-full">
                         <AppSidebar/>
                         <main className="flex-1 w-full flex flex-col overflow-x-hidden">
                             <Header> <SidebarTrigger/> </Header>
@@ -120,6 +120,15 @@ export default function RootLayout({
               gtag('js', new Date());
               gtag('config', '${siteConfig.analyticsId}');
             `}
+        </Script>
+        <Script id="microsoft-clarity-init" strategy="afterInteractive">
+            {`
+                    (function(c,l,a,r,i,t,y){
+                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                    })(window, document, "clarity", "script", "${siteConfig.clarityId}");
+                `}
         </Script>
         </body>
         </html>
