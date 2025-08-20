@@ -180,6 +180,7 @@ export default function Info() {
                                 </div>
                                 <div
                                     className="absolute top-0 left-0 right-0 bottom-0 bg-[#0d0d0de8] rounded-lg"></div>
+                                <span className={'sr-only'}>Fortune Tiger</span>
                             </Link>
                         </div>
                     </div>

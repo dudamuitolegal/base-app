@@ -87,7 +87,6 @@ export default function Header({children}) {
 
                     <Link href="/" className="flex-shrink-0">
                         <Image
-                            className="dark:invert"
                             src={siteConfig.logo}
                             alt="Logo"
                             width={siteConfig.logoWidth}
