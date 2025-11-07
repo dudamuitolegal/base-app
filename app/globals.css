@@ -1,0 +1,58 @@
+/* app/globals.css */
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(46, 100%, 50%);
+  --color-accent: hsl(50, 100%, 52%);
+  --color-background: hsl(217, 100%, 4%);
+  --color-surface: hsl(211, 100%, 12%);
+  --color-border: hsl(211, 100%, 20%);
+  --color-primary-fg: hsl(217, 100%, 4%);
+  --color-accent-fg: hsl(217, 100%, 4%);
+  --color-text: hsl(210, 15%, 95%);
+  --color-text-muted: hsl(210, 15%, 70%);
+  --color-letterbox: hsl(217, 100%, 2%);
+}
+
+.border-glow-effect {
+  position: relative;
+  background-color: var(--surface);
+  padding: 1rem;
+}
+
+.border-glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+
+  background-image:
+    linear-gradient(to right, #fb8500, transparent 50%, #fb8500),
+
+    linear-gradient(to top, #fb8500 70%, transparent),
+
+    linear-gradient(to top, #fb8500 70%, transparent);
+
+  background-size:
+    100% 1px,
+    1px 50%,
+    1px 50%;
+
+  background-position:
+    bottom center,
+    bottom left,
+    bottom right;
+
+  background-repeat: no-repeat;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}

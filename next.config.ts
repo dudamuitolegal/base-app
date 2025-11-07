@@ -1,19 +1,18 @@
 import type { NextConfig } from "next";
-import { siteConfig } from "@/utils/siteConfig";
 
 const nextConfig: NextConfig = {
-    output: "export",
-    distDir: "out",
-    images: {unoptimized: true},
-    async redirects() {
-        return [
-            {
-                source: "/go/:path*",
-                destination: siteConfig.affiliateLink,
-                permanent: false,
-            },
-        ];
-    },
+  images: {
+    remotePatterns: [
+       {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'u6a1vj9v7vcxghjn.public.blob.vercel-storage.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
