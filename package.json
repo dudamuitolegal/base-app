@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "upload-data": "dotenv -e .env -- node scripts/upload-shared-data.mjs"
+    "upload-data": "dotenv -e .env.local -- node scripts/upload-shared-data.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

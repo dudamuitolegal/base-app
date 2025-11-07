@@ -5,7 +5,8 @@
     "titleLine2": "CASHBACK",
     "description": "50% de Cashback até R$2.000 nas primeiras 24h.",
     "buttonText": "Resgatar Bônus",
-    "buttonLink": "/promocoes/cashback"
+    "buttonLink": "/promocoes/cashback",
+    "so pra ve": "teste"
   },
   {
     "imageSrc": "https://u6a1vj9v7vcxghjn.public.blob.vercel-storage.com/banner-2.webp",
