@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "upload-data": "dotenv -e .env.local -- node scripts/upload-shared-data.mjs"
+    "upload-data": "dotenv -e .env.local -- node scripts/upload-shared-data.mjs",
+    "process-slots": "dotenv -e .env.local -- node scripts/process-slots.mjs",
+    "delete-blobs": "dotenv -e .env.local -- node scripts/delete-blobs.mjs"
+
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

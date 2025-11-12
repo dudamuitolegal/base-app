@@ -43,3 +43,7 @@ slots.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+/upbet
+/betabet
