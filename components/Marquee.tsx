@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Marquee from "react-fast-marquee";
 import CampaignIcon from '@mui/icons-material/Campaign';
 
